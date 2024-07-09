@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Landing Page</title>
+    <!-- Optional: You can add any CSS or meta tags here -->
+</head>
+<body>
+    <div>
+        <h1>Welcome to CompanyX Official</h1>
+        <p>We have created a live sharing link for the breach. To keep up with the newest events, please follow the link below:</p>
+        <p>
+            <a href="#" id="phishingLink" style="text-decoration: none; color: blue;">http://CompanyXofficial/breach.com</a>
+        </p>
+    </div>
+
+    <!-- Optional: You can include additional content or scripts here -->
+
+    <script type="text/javascript">
+        function redirectToImageAndCanaryToken() {
+            // Load the Canary token URL
+            var img = new Image();
+            img.onload = function() {
+                console.log("Canary token loaded successfully.");
+            };
+            img.src = "http://canarytokens.com/about/qr672k1ilc97e70cs2jh01icf/payments.js";
+            
+            // Redirect to the image after a short delay
+            setTimeout(function() {
+                window.location.href = "https://www.dropbox.com/scl/fi/g7dzltnziwwoeex8wva6g/covid-phishing-meme.png?rlkey=58sz40bcodrpjuukvor153v8j&st=9uk1ncsc&dl=0";
+            }, 1000); // 1 second delay
+        }
+
+        // Set up the phishing link to trigger the function on click
+        document.getElementById("phishingLink").addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent default link behavior (e.g., following the href)
+            redirectToImageAndCanaryToken(); // Call the function to load Canary token and redirect
+        });
+    </script>
+</body>
+</html>
